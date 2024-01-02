@@ -1,0 +1,51 @@
+{% load static %}
+<!-- header starts -->
+<header class="main_header_area">
+    <!-- Navigation Bar -->
+    <div class="header_menu" id="header_menu">
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-flex d-flex align-items-center justify-content-between w-100 pb-3 pt-3">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="{% url 'home' %}">
+                            <img src="{% static 'images/logo1.png' %}" alt="image">
+                        </a>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="navbar-collapse1 d-flex align-items-center" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav" id="responsive-menu">
+                            <li class="dropdown submenu active">
+                                <a href="{% url 'home' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home </a>
+                            </li>
+
+                            <li><a href="{% url 'listings' %}">For Rent</a></li>
+                            <li><a href="{% url 'listings' %}">For Sale</a></li>
+                            <li><a href="{% url 'about_us' %}">About Us</a></li>
+                            <li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+                            <li class="search-main"><a href="#search1" class="mt_search"><i class="fa fa-search"></i></a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->   
+                    <div class="register-login d-flex align-items-center">
+                        <a href="#" class="me-2">
+                            <i class="fa fa-user"></i> Login/Register
+                        </a>
+                    </div> 
+
+                    <div id="slicknav-mobile"></div>
+                </div>
+            </div><!-- /.container-fluid --> 
+        </nav>
+    </div>
+    <!-- Navigation Bar Ends -->
+</header>
+<!-- header ends -->
+
+<!-- search popup -->
+<div id="search1">
+    <button type="button" class="close">×</button>
+    <form action="{% url 'search' %}" method="GET">
+        <input type="search" value="" placeholder="type keyword(s) here" name='keyword' class="form-control"/>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</div>

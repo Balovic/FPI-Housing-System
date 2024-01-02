@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<!-- BreadCrumb Starts -->  
+<section class="breadcrumb-main pb-0 pt-20" style="background-image: url(images/bg/bg2.jpg);">
+    <div class="breadcrumb-outer">
+        <div class="container">
+            <div class="breadcrumb-content d-md-flex align-items-center pt-6">
+                <h1 class="mb-0">Register</h1>
+                <nav aria-label="breadcrumb">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Register</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="dot-overlay"></div>
+</section>
+<!-- BreadCrumb Ends --> 
+
+<!-- register section starts -->
+<section class="login-register pt-10">
+    <div class="container">
+        <div class="log-main blog-full log-reg w-75 mx-auto">
+            <div class="row">
+                <div class="col-lg-6">
+                   <div class="blog-image">
+                        <a href="#"><img src="{% static 'images/trending/trending5.jpg' %}" alt=""></a>
+                    </div> 
+                </div>
+                <div class="col-lg-6">
+                    <h4 class="text-center border-b pb-2">Register</h4>
+                    <div class="log-reg-button d-sm-flex align-items-center justify-content-between">
+                        <button type="submit" class="btn btn-fb w-50 me-1">
+                            <i class="fab fa-facebook"></i> Login with Facebook
+                        </button>
+                        <button type="submit" class="btn btn-google w-50 ms-1">
+                            <i class="fab fa-google"></i> Login with Google
+                        </button>
+                    </div>
+                    <hr class="log-reg-hr position-relative my-4 overflow-visible">
+                    <form method="POST" action="{% url 'register' %}" name="contactform2" id="contactform2">
+                        {% csrf_token %}
+                        <div class="form-group mb-2">
+                            <input type="text" name="first_name" class="form-control" id="first_name" placeholder="First Name" required>
+                        </div>
+                        <div class="form-group mb-2">
+                            <input type="text" name="last_name" class="form-control" id="Second Name" placeholder="Second Name" required>
+                        </div>
+                        <div class="form-group mb-2">
+                            <input type="text" name="username" class="form-control" id="Username" placeholder="Username" required>
+                        </div>
+                        <div class="form-group mb-2">
+                            <input type="text" name="email" class="form-control" id="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group mb-2">
+                            <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+                        </div>
+                        <div class="form-group mb-2">
+                            <input type="password" name="password2" class="form-control" id="repassword" placeholder="Re-enter Password" required>
+                        </div>
+                        <div class="comment-btn mb-2 pb-2 text-center border-b">
+                            <input type="submit" class="nir-btn w-100" value="Register">
+                        </div>
+                        <p class="text-center">Already have an account? <a href="login.html" class="theme">Login</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- register section Ends -->
+
+{% endblock content %}
